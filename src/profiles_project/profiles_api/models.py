@@ -16,7 +16,7 @@ class UserProfileManager(BaseUserManager):
             raise ValueError("Users must have an email address.")
 
         # normalize means to convert it into email format means lowercase
-        email = self.normalize.email(email)
+        email = self.normalize_email(email)
         user = self.model(email= email, name = name)
 
         # The set password Function will encrpt the password for us
